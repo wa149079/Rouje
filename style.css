@@ -1,0 +1,141 @@
+/* Stil für den Onlineshop */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(236, 237, 231);
+    color: #fff;
+    text-align: center;
+    padding-bottom: 5mm;
+}
+.header img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: 120px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin-block-end: 5mm;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#products {
+    flex: 2;
+}
+
+#cart {
+    flex: 1;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* Stil für Produkte im Katalog */
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Stil für den Warenkorb */
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+}
+
+.cart-item button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#checkout {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.product-title {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.product-title:hover {
+    text-decoration: underline;
+}
+
+/* CSS für das Modal-Fenster */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Schließen-Button im Produkt-Details-Modal */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Stil für das Warenkorb-Icon */
+.cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}

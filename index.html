@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Skatemarke Online-Shop</title>
+</head>
+<body>
+    <header class="header">
+        <img src="images/Bildschirmfoto 2023-09-28 um 09.02.42.png" alt="Skatemarke Banner">
+        <nav>
+            <ul>
+                <li><a href="#" id="decks">Decks</a></li>
+                <li><a href="#" id="rollen">Rollen</a></li>
+                <li><a href="#" id="achsen">Achsen</a></li>
+                <li><a href="#" id="kugellager">Kugellager</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="products">
+            <!-- Hier können Produkte angezeigt werden -->
+        </section>
+        <aside id="cart">
+            <h2>Warenkorb</h2>
+            <ul id="cart-items">
+                <!-- Hier werden die ausgewählten Produkte im Warenkorb angezeigt -->
+            </ul>
+            <p>Gesamtpreis: <span id="cart-total">0.00 €</span></p>
+            <button id="checkout">Checkout</button>
+        </aside>
+    </main>
+    <script src="script.js"></script>
+
+<!-- Modal-Fenster für Produktinformationen -->
+<div id="product-details-modal" class="modal">
+    <div class="modal-content" id="modal-content">
+        <!-- Schließen-Button -->
+        <span class="close" onclick="closeProductDetailsModal()">&times;</span>
+        <h2>Produktdetails</h2>
+        <p id="product-info"></p>
+    </div>
+</div>
+
+</body>
+</html>
