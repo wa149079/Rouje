@@ -28,19 +28,22 @@ function displayProducts(category) {
     });
 }
 
-// Funktion zum Produkt zum Warenkorb hinzufügen
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    if (product) {
-        cart.push(product);
-        updateCart();
-    }
+
+
+// Füge dem HTML eine Container-Div für den Warenkorb hinzu
+document.body.innerHTML += '<div id="cart"></div>';
+
+// Funktion zum Warenkorb ein- oder ausblenden
+function toggleCart() {
+    const cart = document.getElementById('cart');
+    cart.classList.toggle('show');
+    updateCart(); // Aktualisiere den Warenkorbinhalt, wenn er angezeigt wird
 }
 
-// Funktion zum Warenkorb aktualisieren
+// Passe die updateCart-Funktion an, um den Warenkorbinhalt im 'cart'-Element anzuzeigen
 function updateCart() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
+    const cartElement = document.getElementById('cart');
+    const cartItemsContainer = document.createElement('ul');
     let total = 0;
 
     cart.forEach(product => {
@@ -55,10 +58,25 @@ function updateCart() {
         total += product.price;
     });
 
-    document.getElementById('cart-total').textContent = total.toFixed(2) + ' €';
+    // Füge den Warenkorbinhalt zum 'cart'-Element hinzu
+    cartElement.innerHTML = '';
+    cartElement.appendChild(cartItemsContainer);
+
+    // Füge den Gesamtpreis hinzu
+    const totalElement = document.createElement('p');
+    totalElement.textContent = `Gesamt: ${total.toFixed(2)} €`;
+    cartElement.appendChild(totalElement);
 }
 
-// Funktion zum Produkt aus dem Warenkorb entfernen
+// Passe die addToCart- und removeFromCart-Funktionen an, um den Warenkorb zu aktualisieren
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        cart.push(product);
+        updateCart();
+    }
+}
+
 function removeFromCart(productId) {
     const index = cart.findIndex(product => product.id === productId);
     if (index !== -1) {

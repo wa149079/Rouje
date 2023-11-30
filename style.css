@@ -139,3 +139,22 @@ main {
     font-size: 24px;
     color: #333;
 }
+#cart {
+    display: none; /* Warenkorb standardmäßig ausblenden */
+    position: fixed;
+    top: 50px; /* Ändere dies entsprechend deinem Layout */
+    right: 20px; /* Ändere dies entsprechend deinem Layout */
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Stelle sicher, dass der Warenkorb über anderen Elementen liegt */
+}
+
+#cart.show {
+    display: block; /* Warenkorb anzeigen, wenn die Klasse 'show' vorhanden ist */
+}
+
+#cart-icon {
+    cursor: pointer;
+}
