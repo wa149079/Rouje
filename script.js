@@ -1,15 +1,16 @@
 // Beispieldaten für Produkte
 const products = [
-    { id: 1, name: 'Skateboard Deck', category: 'Decks', price: 49.99, description: 'Hochwertiges Skateboard Deck' },
-    { id: 2, name: 'Skateboard Rollen', category: 'Rollen', price: 19.99, description: 'Hochabriebfeste Skateboard Rollen' },
-    { id: 3, name: 'Skateboard Achsen', category: 'Achsen', price: 29.99, description: 'Robuste Skateboard Achsen' },
-    { id: 4, name: 'Kugellager', category: 'Kugellager', price: 9.99, description: 'Hochpräzise Skateboard Kugellager' }
+    { id: 1, name: 'Skateboard Deck', category: 'Decks', price: 49.99, description: 'Hochwertiges Skateboard Deck', image: 'images/s-l1600.jpg' },
+    { id: 2, name: 'Skateboard Rollen', category: 'Rollen', price: 19.99, description: 'Hochabriebfeste Skateboard Rollen', image: 'images/Screenshot-2023-08-16-at-10-34-27-Blank-Skateboard-Rollen-Weiss-100a-Kopie.png.webp' },
+    { id: 3, name: 'Skateboard Achsen', category: 'Achsen', price: 29.99, description: 'Robuste Skateboard Achsen', imagine: 'images/independent-skateboard-achse-axis-149-stage-11-polished-silver-99040-3.jpg' },
+    { id: 4, name: 'Kugellager', category: 'Kugellager', price: 9.99, description: 'Hochpräzise Skateboard Kugellager', imagine: 'images/Skateboard+Kugellager+kaufen.jpg' }
 ];
 
 // Warenkorb
 const cart = [];
 
 // Funktion zum Produkte in der Kategorie anzeigen
+f// Funktion zum Produkte in der Kategorie anzeigen
 function displayProducts(category) {
     const productsContainer = document.getElementById('products');
     productsContainer.innerHTML = '';
@@ -20,13 +21,15 @@ function displayProducts(category) {
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
         productDiv.innerHTML = `
-            <p class="product-title" onclick="showProductDetails(${product.id})">${product.name}</p>
+            <img src="${product.image}" alt="${product.name}" onclick="showProductDetails(${product.id})">
+            <p class="product-title">${product.name}</p>
             <p>Preis: ${product.price.toFixed(2)} €</p>
             <button onclick="addToCart(${product.id})">In den Warenkorb</button>
         `;
         productsContainer.appendChild(productDiv);
     });
 }
+
 
 
 

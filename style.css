@@ -99,6 +99,19 @@ main {
 .product-title:hover {
     text-decoration: underline;
 }
+/* Neuer Stil für das Produktbild */
+.product img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s; /* Füge einen Transitions-Effekt hinzu */
+}
+
+/* Vergrößerungseffekt bei Hover */
+.product img:hover {
+    transform: scale(1.2);
+}
 
 /* CSS für das Modal-Fenster */
 .modal {
