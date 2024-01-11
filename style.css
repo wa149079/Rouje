@@ -52,12 +52,7 @@ main {
     padding: 20px;
 }
 
-/* Stil für Produkte im Katalog */
-.product {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-}
+
 
 /* Stil für den Warenkorb */
 #cart-items {
@@ -99,19 +94,34 @@ main {
 .product-title:hover {
     text-decoration: underline;
 }
-/* Neuer Stil für das Produktbild */
+
+/* Neuer Stil für das Produkt */
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 200px; /* Beispielbreite für die Kachel, anpassen nach Bedarf */
+    height: 200px; /* Setze die Höhe gleich der Breite, um ein Quadrat zu erstellen */
+}
+
+/* Neuer Stil für das Produktbild innerhalb der Kachel */
 .product img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
+    width: 100%; /* Das Bild füllt die gesamte Breite der Kachel aus */
+    height: 100%; /* Das Bild füllt die gesamte Höhe der Kachel aus */
+    object-fit: cover; /* Skaliert das Bild, um die Kachel zu füllen, ohne das Seitenverhältnis zu ändern */
     border: 1px solid #ddd;
     cursor: pointer;
-    transition: transform 0.2s; /* Füge einen Transitions-Effekt hinzu */
+    transition: transform 0.2s;
 }
 
 /* Vergrößerungseffekt bei Hover */
 .product img:hover {
     transform: scale(1.2);
 }
+
 
 /* CSS für das Modal-Fenster */
 .modal {

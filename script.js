@@ -10,7 +10,6 @@ const products = [
 const cart = [];
 
 // Funktion zum Produkte in der Kategorie anzeigen
-f// Funktion zum Produkte in der Kategorie anzeigen
 function displayProducts(category) {
     const productsContainer = document.getElementById('products');
     productsContainer.innerHTML = '';
